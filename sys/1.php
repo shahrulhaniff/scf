@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-include "sys/database/server.php";
+include "database/server.php";
 
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'On');
@@ -41,27 +41,27 @@ if($result) {
 				
 					//Go to home page
 					 if ($_SESSION['USER_TYPE'] == 'MASTER') {
-						header("location: sys/index_master.php");//echo $position;
+						header("location: index_master.php");//echo $position;
 					 }
 					
 					else if ($_SESSION['USER_TYPE'] == 'MEMBER'){
-						header("location: sys/index.php");
+						header("location: index.php");
 						//echo $ipaddress;
 					}
 					
 					else if ($_SESSION['USER_TYPE'] == 'LP'){
-						header("location: sys/index_LP.php");
+						header("location: index_LP.php");
 					}
 					
 					else{ 
-						echo"<script>alert('Access Denied! 0');document.location.href='index.php';</script>"; 
+						echo"<script>alert('Access Denied! 0');document.location.href='login.php';</script>"; 
 					}
 					
 					exit();
 					}
 			
 			else{
-				echo"<script>alert('Access Denied!');document.location.href='index.php';</script>";
+				echo"<script>alert('Access Denied!');document.location.href='login.php';</script>";
 			}
 	}
 	
